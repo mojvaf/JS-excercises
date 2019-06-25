@@ -69,7 +69,20 @@ let events = [
 console.log("-".repeat(40));
 console.log("Exercise 4");
 console.log("Before sorting",events);
-events.sort((a,b)=>
-    (a.turnout < b.turnout) ? 1 : -1
-)
+events.sort((a,b)=>(a.turnout < b.turnout) ? 1 : -1);
 console.log("After sorting",events);
+
+//Exercise 5
+let arr = [1,2,3,4,5,6,7,8,9];
+console.log("-".repeat(40));
+console.log("Array before",arr);
+console.log("Array after",arr.map((value)=>{
+    return value*value;
+}).filter((value) => {
+   return value % 2 === 0;
+}))
+
+//Exercise 7
+let final = new Date("2014-07-13");
+console.log("-".repeat(40));
+console.log("Germany has won the world cup",Math.ceil( (new Date() - final) /1000 / 60 / 60 / 24),"days ago");
