@@ -75,6 +75,7 @@ console.log("After sorting",events);
 //Exercise 5
 let arr = [1,2,3,4,5,6,7,8,9];
 console.log("-".repeat(40));
+console.log("Exercise 5");
 console.log("Array before",arr);
 console.log("Array after",arr.map((value)=>{
     return value*value;
@@ -82,7 +83,61 @@ console.log("Array after",arr.map((value)=>{
    return value % 2 === 0;
 }))
 
+//Exercise 6
+let players = [0,0];
+let j = 0;
+do{
+    for(let i = 0; i<6;i++){
+        players[j]+=Math.floor((Math.random() * 6) + 1);
+    }
+    j = (j==0) ? 1 : 0;
+}while(players[j]<10000)
+let winner = players[0]>10000 ? "Player 1" : "Player 2";
+console.log("-".repeat(40));
+console.log("Exercise 6");
+console.log(`Player 1: ${players[0]}, Player 2: ${players[1]} - ${winner} wins`);
+
 //Exercise 7
 let final = new Date("2014-07-13");
 console.log("-".repeat(40));
+console.log("Exercise 7");
 console.log("Germany has won the world cup",Math.ceil( (new Date() - final) /1000 / 60 / 60 / 24),"days ago");
+
+//Exercise 8
+const hourTracking = [
+    { day: 'Monday', start: 8, end: 17},
+    { day: 'Tuesday', start: 9, end: 15},
+    { day: 'Wednesday', start: 10, end: 18},
+    { day: 'Thursday', start: 7, end: 14},
+    { day: 'Friday', start: 6, end: 12},
+];
+let hours = 0;
+for(let day in hourTracking){
+    hours += (hourTracking[day].end - hourTracking[day].start);
+}
+console.log("-".repeat(40));
+console.log("Exercise 8");
+console.log("Number of worked hours - ",hours);
+
+//Exercise 9
+function mapping(arr,callback){
+    return arr.map(callback);
+}
+const powerOfTwo = mapping([1,2,3,4,5], (val) => Math.pow(val,2) );
+console.log("-".repeat(40));
+console.log("Exercise 9");
+console.log("Power",powerOfTwo);
+const squareRoot = mapping(powerOfTwo, (val) => Math.sqrt(val,2) );
+console.log("Square root",squareRoot);
+
+//Exercise 10
+let board = [
+    [1, 2, 3], 
+	["quick", "brown", "fox", "jumped", "over", "lazy", "dog"], 
+    [true, false]
+]
+console.log("-".repeat(40));
+console.log("Exercise 10");
+board.forEach(subarray=>{
+    subarray.forEach(value=>console.log(value));
+})
